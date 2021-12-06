@@ -47,15 +47,18 @@ scale_fill_viridis_c(option = "plasma", trans = "sqrt")
 # https://covid19.who.int
 # https://covid19.who.int/info
 # https://covid19.who.int/WHO-COVID-19-global-data.csv
-source('R/covid.R')
+source('covid.R')
 covid_world <- get_covid_data(world)
 
 # Check that this is OK - produce a plot (as above) for the Covid cases and/or
 # deaths.
+ggplot(data = covid_world) +
+geom_sf(aes(fill = Case_rate)) +
+scale_fill_viridis_c(option = "plasma", trans = "sqrt")
 
 # Task 3b: Get data about covid variants
 # https://www.gisaid.org/hcov19-variants/
-source('R/variants.R')
+source('variants.R')
 # Step 1: Add one variant at a time, e.g.
 covid_variants <- covid_world
 covid_variants <- add_variant(covid_variants, 'Count_A',
