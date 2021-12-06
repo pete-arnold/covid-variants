@@ -52,9 +52,6 @@ covid_world <- get_covid_data(world)
 
 # Check that this is OK - produce a plot (as above) for the Covid cases and/or
 # deaths.
-ggplot(data = covid_world) +
-geom_sf(aes(fill = Case_rate)) +
-scale_fill_viridis_c(option = "plasma", trans = "sqrt")
 
 # Task 3b: Get data about covid variants
 # https://www.gisaid.org/hcov19-variants/
@@ -82,7 +79,7 @@ variants <- c(
 covid_variants <- add_variants(covid_world, variants)
 
 # Task 3c: Create a map.
-source('R/plot.R')
+source('plot.R')
 # For cases.
 plot_cases <- create_map(covid_variants, 'Case_rate')
 print(plot_cases)
