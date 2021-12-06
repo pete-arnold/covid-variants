@@ -89,7 +89,7 @@ print(plot_omicron)
 
 # Task 3d: Create a plot with six maps - cases, deaths, alpha, gamma, delta and
 #         omicron.
-source('R/layout.R')
+source('layout.R')
 layout <- layout_maps(covid_variants,
     c('Case_rate', 'Death_rate', 'Count_A', 'Count_G', 'Count_D', 'Count_O'),
     'Covid cases, deaths and variant distributions (totals for the pandemic)')
