@@ -22,6 +22,6 @@ create_map <- function(df, variable){
     # 1. Plot the data in a world map (straightfoward).
     # 2. Use the specified variable (more advanced).
     ggplot(data=df) +
-    geom_sf(aes(fill=variable)) +
+    geom_sf(aes(fill=eval(sym(variable)))) +
     scale_fill_viridis_c(option = "plasma", trans = "sqrt", name=variable)
 }
