@@ -24,17 +24,5 @@ get_covid_data <- function(map_data){
     # 4. Join the Covid-19 data with the map data.
     # 5. I would suggest you also create the rate of Covid-19 cases and deaths.
     # 6. Return the finished data frame.
-    covid <- read_csv('data/WHO-COVID-19-global-data.csv')
-    covid_latest <- covid %>%
-        group_by(Country_code) %>% filter(row_number()==n()) %>% ungroup()
-    covid_latest <- covid_latest %>%
-        mutate(Country=ifelse(Country=='The United Kingdom',
-            'United Kingdom', Country))
-    covid_world <- map_data %>%
-        left_join(covid_latest, by=c('iso_a2' = 'Country_code'))
-    covid_world <- covid_world %>%
-        mutate(Case_rate=Cumulative_cases/pop_est,
-            Death_rate=Cumulative_deaths/pop_est)
-    return(covid_world)
 }
 
