@@ -27,6 +27,9 @@ get_covid_data <- function(map_data){
     covid <- read_csv('data/WHO-COVID-19-global-data.csv')
     covid_latest <- covid %>%
         group_by(Country_code) %>% filter(row_number()==n()) %>% ungroup()
+    covid_latest <- covid_latest %>%
+        mutate(Country=ifelse(Country=='The United Kingdom',
+            'United Kingdom', Country))
     covid_world <- map_data %>%
         left_join(covid_latest, by=c('iso_a2' = 'Country_code'))
     covid_world <- covid_world %>%
