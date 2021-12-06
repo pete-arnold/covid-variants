@@ -44,6 +44,8 @@ scale_fill_viridis_c(option = "plasma", trans = "sqrt")
 # Task 2: Get a github account and get permission to my world repository.
 
 # Task 3a: Get covid data for countries.
+# https://covid19.who.int
+# https://covid19.who.int/info
 # https://covid19.who.int/WHO-COVID-19-global-data.csv
 source('R/covid.R')
 covid_world <- get_covid_data(world)
