@@ -59,13 +59,6 @@ add_variant <- function(df, variant_name, file_name){
     # 4. Name the variant data column as specified.
     # 5. Join the variant data to the existing data frame.
     # 6. Return the finished data frame.
-    variant <- read_csv(file_name) %>%
-        select(Country, 2) %>%
-        mutate(Country=ifelse(Country=='USA', 'United States of America', Country))     
-    names(variant)[2] <- variant_name
-    df <- df %>%
-        left_join(variant, by='Country')
-    return(df)
 }
 
 # Which results in this code.
