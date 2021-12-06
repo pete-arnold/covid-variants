@@ -44,6 +44,8 @@ to the main branch and make a random change. Commit. Look at the history. Push t
 
 1. Create the final map. Everyone should now be able to pull the github repository and complete the covariants file to produce a plot page with several maps showing the distribution of various covid variants. Commit and push this.
 
+![Typical maps output at the end of the exercise](https://github.com/pete-arnold/covid-variants/blob/main/images/maps.png?raw=true)
+
 ### Functions to be created in the exercises
 1. Create a map showing the data from a specified variable (may require advanced code).
 1. Get the world Covid data and add to the map data frame.
