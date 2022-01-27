@@ -1,9 +1,9 @@
 # covid-variants
 Exercise in the use of git version control in the exploration and mapping of Covid-19 variant data.
 
-## PM272 Github session
+## PMIM102/PM272 Github session
 
-_Dr Pete Arnold, 6 December 2021_
+_Dr Pete Arnold, 6 December 2021-27 January 2022_
 
 ### Instructions
 1. __Create a repository from the repository on github.__
