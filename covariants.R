@@ -20,7 +20,7 @@ library(tidyverse)      # For most things.
 # install.packages(c(
 #    "cowplot", "googleway", "ggplot2", "ggrepel", "ggspatial", "libwgeom", "sf",
 #    "rnaturalearth", "rnaturalearthdata", "rgeos"
-#))
+# ))
 library(rnaturalearth)
 library(rnaturalearthdata)
 # 'ne_countries' provides 64 variables which is not easy to review, so we'll
@@ -34,6 +34,7 @@ world <- ne_countries(scale = "medium", returnclass = "sf") %>%
 theme_set(theme_bw())
 ggplot(data = world) +
 geom_sf()
+
 # Test it with a plot of population.
 ggplot(data = world) +
 geom_sf(aes(fill = pop_est)) +
@@ -49,9 +50,18 @@ scale_fill_viridis_c(option = "plasma", trans = "sqrt")
 # https://covid19.who.int/WHO-COVID-19-global-data.csv
 source('covid.R')
 covid_world <- get_covid_data(world)
+colnames(covid_world)
 
 # Check that this is OK - produce a plot (as above) for the Covid cases and/or
 # deaths.
+theme_set(theme_bw())
+ggplot(data = covid_world) +
+    geom_sf()
+
+
+ggplot(data = covid_world) +
+    geom_sf(aes(fill = Cases...newly.reported.in.last.7.days)) +
+    scale_fill_viridis_c(option = "plasma", trans = "sqrt")
 
 # Task 3b: Get data about covid variants
 # https://www.gisaid.org/hcov19-variants/

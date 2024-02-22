@@ -24,5 +24,6 @@ get_covid_data <- function(map_data){
     # 4. Join the Covid-19 data with the map data.
     # 5. I would suggest you also create the rate of Covid-19 cases and deaths.
     # 6. Return the finished data frame.
+    covidData <- read.csv("./Data/covidData.csv")
 }
 
